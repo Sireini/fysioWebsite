@@ -1,0 +1,17 @@
+//== Fonts
+//
+// Font can be auto created using the mixin givin in mixins/fonts.less.
+//
+// @params: @name, @file-name, @weight, @style
+// @example: .create-font(Open Sans, OpenSans-400, normal);
+//
+//===============================================
+
+// San Francisco Apple system font
+.create-font(SFNS, SFNS-Regular, normal, normal);
+.create-font(SFNS, SFNS-Bold, 700, normal);
+
+.font-bold {
+    font-weight: 700;
+    -webkit-font-smoothing: antialiased;
+}

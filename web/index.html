@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="author" content="Opifer.nl">
+	<meta name="description" content="">
+	<title>Bootstrap</title>
+
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-offset-2">
+                <div class="wrapper">
+					 <div>
+						<a href="php/get_info.php">Test</a>
+					</div>
+					<form action="php/save.php" method="post">
+						<label class="checkbox-inline"><input type="checkbox" name="oefeningen[]" value="lagerugklacht" />Oefening lage rugklacht</label>
+						<label class="checkbox-inline"><input type="checkbox" name="oefeningen[]" value="nekklacht"  />Oefening nek klacht</label>
+						<label class="checkbox-inline"><input type="checkbox" name="oefeningen[]" value="schouderklacht"  />Oefening schouder klacht</label>
+						<label class="checkbox-inline"><input type="checkbox" name="oefeningen[]" value="armklacht"  />Oefening arm klacht</label>
+						
+						<div class="col-md-6">
+							Herhalingen <input type="number" name="herhalingen" id="reps" value="">
+						</div>
+						<div class="col-md-6">
+							Sets <input type="number" name="sets" id="sets" value="">
+						</div>
+						<input type="submit" value="submit" />
+					</form>
+
+					<a href="addnewuser.html" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i> Client toevoegen</a>
+				</div>
+            </div>
+        </div> 
+    </div>
+
+	<!-- Modal -->
+	<div id="myModal" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+			<h4 class="modal-title">Client toevoegen</h4>
+		</div>
+		<div class="modal-body">
+			<form action="php/save_user.php" method="post">
+				<div class="form-group">
+					<label for="vnaam">Naam client:</label>
+					<input type="text" class="form-control" id="vnaam" name="name[]" placeholder="Voornaam">
+					<input type="text" class="form-control" id="anaam" name="name[]" placeholder="Achternaam">
+				</div>
+				<div class="form-group">
+					<label for="bday">Geboortejaar:</label>
+					<input type="date" class="form-control" id="bday" placeholder="yyyy">
+				</div>
+
+				<button type="button" class="btn btn-primary randomNumber">generate token</button>
+				<input id="number" value="token" name="randomNumber"></input>
+				<button type="submit" class="btn btn-default">Submit</button>
+			</form>
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		</div>
+		</div>
+
+	</div>
+	</div>
+
+	<script src="js/app.js"></script>
+</body>
+</html>

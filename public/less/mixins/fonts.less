@@ -1,0 +1,25 @@
+//== Font Mixin
+//
+// Font can be auto created using the following mixin.
+// Name, filename, weight and style can be given
+//
+// @example: .create-font(Open Sans, MuseoSansRounded-300, normal);
+//
+//===============================================
+
+	.create-font(@name, @file, @weight: normal, @style: normal) {
+		@font-face {
+			font-family: '@{name}';
+			src: url('../fonts/@{file}.eot');
+			src: url('../fonts/@{file}.ttf') format('truetype'),
+				 url('../fonts/@{file}.woff') format('woff'),
+				 url('../fonts/@{file}.svg') format('svg');
+			font-weight: @weight;
+			font-style: @style;
+		}
+	}
+
+	.fa(@code) {
+		content: @code;
+		.fa-icon;
+	}

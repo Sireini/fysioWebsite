@@ -1,0 +1,10 @@
+{
+	"name": "boetemeister",
+	"version": "1",
+    "dependencies": {
+	    "jquery": "~1.11",
+        "bootstrap": "3.3.5",
+        "picturefill": "latest",
+        "fontawesome": "4.4.0"
+	}
+}
