@@ -1,0 +1,75 @@
+//== Position Mixin
+//
+// With the position mixin elements can be easy positioned across the document.
+// Supports position fixed with an optional boolean value
+//
+// @example: .pos-t-l(40px, 20px)
+// @output:
+//      position: absolute;
+//      top: 40px;
+//      left: 20px;
+//
+//===============================================
+
+
+	.position-type(@fixed) when (@fixed = false) {
+		position: absolute;
+	}
+	.position-type(@fixed) when (@fixed = true) {
+		position: fixed;
+	}
+
+// Position types
+//===============================================
+
+	.pos-t-l(@pos-top: 0, @pos-left: 0, @fixed: false) {
+		.position-type(@fixed);
+		top: @pos-top;
+		left: @pos-left;
+	}
+
+	.pos-t-r(@pos-top: 0, @pos-right: 0, @fixed: false) {
+		.position-type(@fixed);
+		top: @pos-top;
+		right: @pos-right;
+	}
+
+	.pos-b-l(@pos-bottom: 0, @pos-left: 0, @fixed: false) {
+		.position-type(@fixed);
+		bottom: @pos-bottom;
+		left: @pos-left;
+	}
+
+	.pos-b-r(@pos-bottom: 0, @pos-right: 0, @fixed: false) {
+		.position-type(@fixed);
+		bottom: @pos-bottom;
+		right: @pos-right;
+	}
+
+	.pos-x(@pos-left: 0, @pos-right: 0, @fixed: false) {
+		.position-type(@fixed);
+		left: @pos-left;
+		right: @pos-right;
+	}
+
+	.pos-y(@pos-top: 0, @pos-bottom: 0, @fixed: false) {
+		.position-type(@fixed);
+		top: @pos-top;
+		bottom: @pos-bottom;
+	}
+
+	.pos-a(@pos-top: 0, @pos-right: 0, @pos-bottom: 0, @pos-left: 0, @fixed: false) {
+		.position-type(@fixed);
+		top: @pos-top;
+		right: @pos-right;
+		bottom: @pos-bottom;
+		left: @pos-left;
+	}
+
+
+// Extendables
+//===============================================
+
+	.block-relative     {   display: block; position: relative; }
+	.block-static       {   display: block; position: static;   }
+	.block-absolute     {   display: block;	position: absolute; }

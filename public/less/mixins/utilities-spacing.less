@@ -1,0 +1,165 @@
+//== Utilities spacing
+//
+// These classes can be used direct on HTML, as for extending and including
+// Based on bootstrap default settings
+//
+// @default: @grid-gutter-width          = 30px
+//
+// @xs:      @grid-gutter-width x 0.333  = 10px
+// @sm:      @grid-gutter-width x 0.5    = 15px
+// @md:      @grid-gutter-width x 0.666  = 20px
+// @lg:      @grid-gutter-width x 1.5    = 45px
+// @xl:      @grid-gutter-width x 2      = 60px
+// @xxl:      @grid-gutter-width x 6      = 180px
+//
+//===============================================
+
+	@spacer:    @grid-gutter-width;
+	@spacer-x:  @grid-gutter-width;
+	@spacer-y:  @grid-gutter-width;
+
+// Spacer array
+//
+// For easy changes ratios are set to variables
+//
+//===============================================
+
+	@ratio-xs:  0.15;
+	@ratio-sm:  0.5;
+	@ratio-md:  0.7;
+	@ratio-lg:  1.2;
+	@ratio-xl:  2;
+	@ratio-xxl: 6;
+
+
+// Margins
+//===============================================
+
+	.m-a-0 { margin:         0 !important; }
+	.m-t-0 { margin-top:     0 !important; }
+	.m-r-0 { margin-right:   0 !important; }
+	.m-b-0 { margin-bottom:  0 !important; }
+	.m-l-0 { margin-left:    0 !important; }
+	.m-x-0 { margin-right:   0 !important; margin-left:   0 !important; }
+	.m-y-0 { margin-top:     0 !important; margin-bottom: 0 !important; }
+
+	.m-a { margin:         @spacer !important;   }
+	.m-t { margin-top:     @spacer-y !important; }
+	.m-r { margin-right:   @spacer-x !important; }
+	.m-b { margin-bottom:  @spacer-y !important; }
+	.m-l { margin-left:    @spacer-x !important; }
+	.m-x { margin-right:   @spacer-x !important; margin-left:   @spacer-x !important; }
+	.m-y { margin-top:     @spacer-y !important; margin-bottom: @spacer-y !important; }
+
+	.m-x-auto {
+		margin-right: auto !important;
+		margin-left: auto !important;
+	}
+
+	.m-a-xs { margin:         round((@spacer * @ratio-xs)) !important;   }
+	.m-t-xs { margin-top:     round((@spacer-y * @ratio-xs)) !important; }
+	.m-r-xs { margin-right:   round((@spacer-x * @ratio-xs)) !important; }
+	.m-b-xs { margin-bottom:  round((@spacer-y * @ratio-xs)) !important; }
+	.m-l-xs { margin-left:    round((@spacer-x * @ratio-xs)) !important; }
+	.m-x-xs { margin-right:   round((@spacer-x * @ratio-xs)) !important; margin-left:   round((@spacer-x * @ratio-xs)) !important; }
+	.m-y-xs { margin-top:     round((@spacer-y * @ratio-xs)) !important; margin-bottom: round((@spacer-y * @ratio-xs)) !important; }
+
+	.m-a-sm { margin:         round((@spacer * @ratio-sm)) !important;   }
+	.m-t-sm { margin-top:     round((@spacer-y * @ratio-sm)) !important; }
+	.m-r-sm { margin-right:   round((@spacer-x * @ratio-sm)) !important; }
+	.m-b-sm { margin-bottom:  round((@spacer-y * @ratio-sm)) !important; }
+	.m-l-sm { margin-left:    round((@spacer-x * @ratio-sm)) !important; }
+	.m-x-sm { margin-right:   round((@spacer-x * @ratio-sm)) !important; margin-left:   round((@spacer-x * @ratio-sm)) !important; }
+	.m-y-sm { margin-top:     round((@spacer-y * @ratio-sm)) !important; margin-bottom: round((@spacer-y * @ratio-sm)) !important; }
+
+	.m-a-md { margin:         round((@spacer * @ratio-md)) !important;   }
+	.m-t-md { margin-top:     round((@spacer-y * @ratio-md)) !important; }
+	.m-r-md { margin-right:   round((@spacer-x * @ratio-md)) !important; }
+	.m-b-md { margin-bottom:  round((@spacer-y * @ratio-md)) !important; }
+	.m-l-md { margin-left:    round((@spacer-x * @ratio-md)) !important; }
+	.m-x-md { margin-right:   round((@spacer-x * @ratio-md)) !important; margin-left:   round((@spacer-x * @ratio-md)) !important; }
+	.m-y-md { margin-top:     round((@spacer-y * @ratio-md)) !important; margin-bottom: round((@spacer-y * @ratio-md)) !important; }
+
+	.m-a-lg { margin:         round((@spacer * @ratio-lg)) !important;   }
+	.m-t-lg { margin-top:     round((@spacer-y * @ratio-lg)) !important; }
+	.m-r-lg { margin-right:   round((@spacer-x * @ratio-lg)) !important; }
+	.m-b-lg { margin-bottom:  round((@spacer-y * @ratio-lg)) !important; }
+	.m-l-lg { margin-left:    round((@spacer-x * @ratio-lg)) !important; }
+	.m-x-lg { margin-right:   round((@spacer-x * @ratio-lg)) !important; margin-left:   round((@spacer-x * @ratio-lg)) !important; }
+	.m-y-lg { margin-top:     round((@spacer-y * @ratio-lg)) !important; margin-bottom: round((@spacer-y * @ratio-lg)) !important; }
+
+	.m-a-xl { margin:         round((@spacer * @ratio-xl)) !important;   }
+	.m-t-xl { margin-top:     round((@spacer-y * @ratio-xl)) !important; }
+	.m-r-xl { margin-right:   round((@spacer-x * @ratio-xl)) !important; }
+	.m-b-xl { margin-bottom:  round((@spacer-y * @ratio-xl)) !important; }
+	.m-l-xl { margin-left:    round((@spacer-x * @ratio-xl)) !important; }
+	.m-x-xl { margin-right:   round((@spacer-x * @ratio-xl)) !important; margin-left:   round((@spacer-x * @ratio-xl)) !important; }
+	.m-y-xl { margin-top:     round((@spacer-y * @ratio-xl)) !important; margin-bottom: round((@spacer-y * @ratio-xl)) !important; }
+
+	.m-a-xxl { margin:         round((@spacer * @ratio-xxl)) !important;   }
+	.m-t-xxl { margin-top:     round((@spacer-y * @ratio-xxl)) !important; }
+	.m-r-xxl { margin-right:   round((@spacer-x * @ratio-xxl)) !important; }
+	.m-b-xxl { margin-bottom:  round((@spacer-y * @ratio-xxl)) !important; }
+	.m-l-xxl { margin-left:    round((@spacer-x * @ratio-xxl)) !important; }
+	.m-x-xxl { margin-right:   round((@spacer-x * @ratio-xxl)) !important; margin-left:   round((@spacer-x * @ratio-xxl)) !important; }
+	.m-y-xxl { margin-top:     round((@spacer-y * @ratio-xxl)) !important; margin-bottom: round((@spacer-y * @ratio-xxl)) !important; }
+
+// Paddings
+//===============================================
+
+	.p-a-0 { padding:         0 !important; }
+	.p-t-0 { padding-top:     0 !important; }
+	.p-r-0 { padding-right:   0 !important; }
+	.p-b-0 { padding-bottom:  0 !important; }
+	.p-l-0 { padding-left:    0 !important; }
+	.p-x-0 { padding-right:   0 !important; padding-left:   0 !important; }
+	.p-y-0 { padding-top:     0 !important; padding-bottom: 0 !important; }
+
+	.p-a { padding:         @spacer !important;   }
+	.p-t { padding-top:     @spacer-y !important; }
+	.p-r { padding-right:   @spacer-x !important; }
+	.p-b { padding-bottom:  @spacer-y !important; }
+	.p-l { padding-left:    @spacer-x !important; }
+	.p-x { padding-right:   @spacer-x !important; padding-left:   @spacer-x !important; }
+	.p-y { padding-top:     @spacer-y !important; padding-bottom: @spacer-y !important; }
+
+	.p-a-xs { padding:         round((@spacer * @ratio-xs)) !important;   }
+	.p-t-xs { padding-top:     round((@spacer-y * @ratio-xs)) !important; }
+	.p-r-xs { padding-right:   round((@spacer-x * @ratio-xs)) !important; }
+	.p-b-xs { padding-bottom:  round((@spacer-y * @ratio-xs)) !important; }
+	.p-l-xs { padding-left:    round((@spacer-x * @ratio-xs)) !important; }
+	.p-x-xs { padding-right:   round((@spacer-x * @ratio-xs)) !important; padding-left:   round((@spacer-x * @ratio-xs)) !important; }
+	.p-y-xs { padding-top:     round((@spacer-y * @ratio-xs)) !important; padding-bottom: round((@spacer-y * @ratio-xs)) !important; }
+
+	.p-a-sm { padding:         round((@spacer * @ratio-sm)) !important;   }
+	.p-t-sm { padding-top:     round((@spacer-y * @ratio-sm)) !important; }
+	.p-r-sm { padding-right:   round((@spacer-x * @ratio-sm)) !important; }
+	.p-b-sm { padding-bottom:  round((@spacer-y * @ratio-sm)) !important; }
+	.p-l-sm { padding-left:    round((@spacer-x * @ratio-sm)) !important; }
+	.p-x-sm { padding-right:   round((@spacer-x * @ratio-sm)) !important; padding-left:   round((@spacer-x * @ratio-sm)) !important; }
+	.p-y-sm { padding-top:     round((@spacer-y * @ratio-sm)) !important; padding-bottom: round((@spacer-y * @ratio-sm)) !important; }
+
+	.p-a-md { padding:         round((@spacer * @ratio-md)) !important;   }
+	.p-t-md { padding-top:     round((@spacer-y * @ratio-md)) !important; }
+	.p-r-md { padding-right:   round((@spacer-x * @ratio-md)) !important; }
+	.p-b-md { padding-bottom:  round((@spacer-y * @ratio-md)) !important; }
+	.p-l-md { padding-left:    round((@spacer-x * @ratio-md)) !important; }
+	.p-x-md { padding-right:   round((@spacer-x * @ratio-md)) !important; padding-left:   round((@spacer-x * @ratio-md)) !important; }
+	.p-y-md { padding-top:     round((@spacer-y * @ratio-md)) !important; padding-bottom: round((@spacer-y * @ratio-md)) !important; }
+
+	.p-a-lg { padding:         round((@spacer * @ratio-lg)) !important;   }
+	.p-t-lg { padding-top:     round((@spacer-y * @ratio-lg)) !important; }
+	.p-r-lg { padding-right:   round((@spacer-x * @ratio-lg)) !important; }
+	.p-b-lg { padding-bottom:  round((@spacer-y * @ratio-lg)) !important; }
+	.p-l-lg { padding-left:    round((@spacer-x * @ratio-lg)) !important; }
+	.p-x-lg { padding-right:   round((@spacer-x * @ratio-lg)) !important; padding-left:   round((@spacer-x * @ratio-lg)) !important; }
+	.p-y-lg { padding-top:     round((@spacer-y * @ratio-lg)) !important; padding-bottom: round((@spacer-y * @ratio-lg)) !important; }
+
+	.p-a-xl { padding:         round((@spacer * @ratio-xl)) !important;   }
+	.p-t-xl { padding-top:     round((@spacer-y * @ratio-xl)) !important; }
+	.p-r-xl { padding-right:   round((@spacer-x * @ratio-xl)) !important; }
+	.p-b-xl { padding-bottom:  round((@spacer-y * @ratio-xl)) !important; }
+	.p-l-xl { padding-left:    round((@spacer-x * @ratio-xl)) !important; }
+	.p-x-xl { padding-right:   round((@spacer-x * @ratio-xl)) !important; padding-left:   round((@spacer-x * @ratio-xl)) !important; }
+	.p-y-xl { padding-top:     round((@spacer-y * @ratio-xl)) !important; padding-bottom: round((@spacer-y * @ratio-xl)) !important; }
+
