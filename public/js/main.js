@@ -13,11 +13,6 @@ $(document).ready(function() {
             scrollTop: $(this.hash).offset().top
         }, 1000);
     });
-
-    $(".randomNumber").click(function(){
-        var number = 1 + Math.floor(Math.random() * 1000);
-        $("#number").text(number); 
-    });
 });
 
 function setJumbotronHeight() {
