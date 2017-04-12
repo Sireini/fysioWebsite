@@ -1,8 +1,8 @@
 <?php
     include("connect.php");
 
-    $sql = "SELECT shortOmschrijving1, shortOmschrijving2, shortOmschrijving3, shortOmschrijving4, Omschrijving1, Omschrijving2, Omschrijving3, Omschrijving4 FROM $tbname";
-    $result = $conn->query($sql);
+    $sqlOmschrijvingen = "SELECT shortOmschrijving1, shortOmschrijving2, shortOmschrijving3, shortOmschrijving4, Omschrijving1, Omschrijving2, Omschrijving3, Omschrijving4 FROM `dummy_data`";
+    $result = $conn->query($sqlOmschrijvingen);
 
     if ($result->num_rows > 0) {
         // output data of each row
@@ -19,7 +19,7 @@
             $shortomschrijving4 = $row["shortOmschrijving4"];
 
             
-            echo "ID: " . $row["Omschrijving1"]. " Oefeningen: " . $row["Omschrijving2"]. "- Herhalingen: " .$row["Omschrijving3"]. "- Sets: " .$row["Omschrijving4"]. "<br>";
+            // echo "ID: " . $row["Omschrijving1"]. " Oefeningen: " . $row["Omschrijving2"]. "- Herhalingen: " .$row["Omschrijving3"]. "- Sets: " .$row["Omschrijving4"]. "<br>";
         }
     } else {
         echo("Error description: " . mysqli_error($conn));

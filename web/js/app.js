@@ -10377,6 +10377,23 @@ $(document).ready(function() {
             scrollTop: $(this.hash).offset().top
         }, 1000);
     });
+
+    function stringGen(len){
+        var text = " ";
+        
+        var charset = "abcdefghijklmnopqrstuvwxyz0123456789";
+        
+        for( var i=0; i < len; i++ )
+            text += charset.charAt(Math.floor(Math.random() * charset.length));
+        
+        return text;
+    }
+
+    $('.generateToken').click(function(){
+        console.log(stringGen(5));
+        $('.showToken').val(stringGen(5));
+    });
+
 });
 
 function setJumbotronHeight() {
