@@ -62,11 +62,11 @@
                                     <div class="panel-body">
                                         <?php echo "<p class='lead'>". $oefening1 . "</p>";?>
 
-                                        <div class="form-group">
+                                        <div class="form-group form-group-sm">
                                             <label for="reps1" class="shortdescription">Herhalingen oefening 1:</label>
                                             <input type="number" name="herhaling1" id="reps1" class="form-control">
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group form-group-sm">
                                             <label for="set1" class="shortdescription">Sets oefening 1:</label>
                                             <input type="number" name="set1" id="set1" class="form-control">
                                         </div>

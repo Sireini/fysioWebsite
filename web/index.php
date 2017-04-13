@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -13,18 +14,18 @@
 </head>
 <body>
 
-    <div class="container">
+    <div class="container m-y-md">
         <div class="row">
             <div class="col-lg-8 col-offset-2">
                 <div class="wrapper">
 					 <div>
-						<a href="php/get_info.php">Test info</a>
+						<a href="php/get_schema.php">Test info</a>
 					</div>
 					<form action="php/save_schema.php" method="post">
-						<label class="checkbox-inline"><input type="checkbox" name="oefening1" value="lagerugklacht" />Oefening lage rugklacht</label>
-						<label class="checkbox-inline"><input type="checkbox" name="oefening2" value="nekklacht"  />Oefening nek klacht</label>
-						<label class="checkbox-inline"><input type="checkbox" name="oefening3" value="schouderklacht"  />Oefening schouder klacht</label>
-						<label class="checkbox-inline"><input type="checkbox" name="oefening4" value="armklacht"  />Oefening arm klacht</label>
+						<!--<label class="checkbox-inline"><input type="checkbox" name="oefening1" value="lagerugklacht" />Oefening lage rugklacht</label>-->
+						<!--<label class="checkbox-inline"><input type="checkbox" name="oefening2" value="nekklacht"  />Oefening nek klacht</label>-->
+						<!--<label class="checkbox-inline"><input type="checkbox" name="oefening3" value="schouderklacht"  />Oefening schouder klacht</label>-->
+						<!--<label class="checkbox-inline"><input type="checkbox" name="oefening4" value="armklacht"  />Oefening arm klacht</label>-->
 
 						<div class="container m-y-md">
 							<div class="row">
@@ -39,13 +40,13 @@
 															<label for="cb1"><img src="img/lagerugklacht.jpg" class="img-responsive"/></label>
 														</div>
 														<div class="panel-body">
-															<p class='lead'>lagerugklacht</p>
+															<p class='lead'>lagerugklacht</p>										
 
-															<div class="form-group">
+															<div class="form-group form-group-sm">
 																<label for="reps1" class="shortdescription">Herhalingen oefening 1:</label>
 																<input type="number" name="herhaling1" id="reps1" class="form-control">
 															</div>
-															<div class="form-group">
+															<div class="form-group form-group-sm">
 																<label for="set1" class="shortdescription">Sets oefening 1:</label>
 																<input type="number" name="set1" id="set1" class="form-control">
 															</div>
@@ -62,11 +63,11 @@
 														<div class="panel-body">
 															<p class='lead'>nekklacht</p>
 
-															<div class="form-group">
+															<div class="form-group form-group-sm">
 																<label for="reps2" class="shortdescription">Herhalingen oefening 2:</label>
 																<input type="number" name="herhaling2" id="reps2" class="form-control">
 															</div>
-															<div class="form-group">
+															<div class="form-group form-group-sm">
 																<label for="set2" class="shortdescription">Sets oefening 2:</label>
 																<input type="number" name="set2" id="set2" class="form-control">
 															</div>
@@ -83,11 +84,11 @@
 														<div class="panel-body">
 															<p class='lead'>schouderklacht</p>
 
-															<div class="form-group">
+															<div class="form-group form-group-sm">
 																<label for="reps3" class="shortdescription">Herhalingen oefening 3:</label>
 																<input type="number" name="herhaling3" id="reps3" class="form-control">
 															</div>
-															<div class="form-group">
+															<div class="form-group form-group-sm">
 																<label for="set3" class="shortdescription">Sets oefening 3:</label>
 																<input type="number" name="set3" id="set3" class="form-control">
 															</div>
@@ -104,11 +105,11 @@
 														<div class="panel-body">
 															<p class='lead'>armklacht</p>
 
-															<div class="form-group">
+															<div class="form-group form-group-sm">
 																<label for="reps4" class="shortdescription">Herhalingen oefening 4:</label>
 																<input type="number" name="herhaling4" id="reps4" class="form-control">
 															</div>
-															<div class="form-group">
+															<div class="form-group form-group-sm">
 																<label for="set4" class="shortdescription">Sets oefening 4:</label>
 																<input type="number" name="set4" id="set4" class="form-control">
 															</div>                  
@@ -131,7 +132,7 @@
 							<input type="date" class="form-control" id="bday" name="bday" placeholder="yyyy">
 						</div>
 
-						<div class="generateToken" class="btn btn-default">generateToken</div>
+						<button type="button" class="generateToken" class="btn btn-default">generateToken</button>
 						<input type="text" class="showToken" name="token">
 						<!--<a href="overview.html"><button class="btn btn-default">Volgende</button></a>-->
 						<input type="submit" value="submit" />

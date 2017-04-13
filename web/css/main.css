@@ -8762,6 +8762,10 @@ button.close {
     display: none !important;
   }
 }
+.wrapper .lead {
+  font-size: 18px;
+  text-align: center;
+}
 .wrapper .shortdescription {
   font-size: 10px;
 }

@@ -19,7 +19,7 @@
             $shortomschrijving4 = $row["shortOmschrijving4"];
 
             
-            // echo "ID: " . $row["Omschrijving1"]. " Oefeningen: " . $row["Omschrijving2"]. "- Herhalingen: " .$row["Omschrijving3"]. "- Sets: " .$row["Omschrijving4"]. "<br>";
+            echo "ID: " . $shortomschrijving1;
         }
     } else {
         echo("Error description: " . mysqli_error($conn));
