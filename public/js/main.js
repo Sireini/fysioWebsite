@@ -26,7 +26,6 @@ $(document).ready(function() {
     }
 
     $('.generateToken').click(function(){
-        console.log(stringGen(5));
         $('.showToken').val(stringGen(5));
     });
 
