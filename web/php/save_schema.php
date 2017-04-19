@@ -16,6 +16,7 @@
     $set3 = $_POST['set3'];    
     $set4 = $_POST['set4'];
     $token = $_POST['token'];
+    $email = $_POST['email'];
 
     // Insert data into mysql
     // if(!empty($reps) && !empty($sets)){
@@ -31,6 +32,49 @@
     // }else {
     //     echo "<script type='text/javascript'>alert('Fill in all required fields');</script>";
     // }     
+
+  
+    $subject = "Login code fysio applicatie";
+
+    $htmlContent = '
+        <html>
+        <head>
+            <title>Welcome to CodexWorld</title>
+        </head>
+        <body>
+            <table align="center" cellspacing="0" style="border: width: 600px; height: 300px;">
+                <h4>Beste'. $name . '</h4>
+                <tr>
+                    <td align="center" bgcolor="#70bbd9" style="padding: 40px 0 30px 0;">
+                        <img src="http://nl.tinypic.com/r/pu39i/9" alt="Creating Email Magic" width="300" height="230" style="display: block;" />
+                    </td>
+                </tr>                
+                <tr></tr>
+                <tr>
+                    <th>Inlog code: '. $token . '</th>
+                </tr>
+                <tr>
+                    <p>Voer deze code in in uw app om uw persoonlijk oefenschema binnen te halen.</p>
+                </tr>
+            </table>
+        </body>
+        </html>';
+
+    // Set content-type header for sending HTML email
+    $headers = "MIME-Version: 1.0" . "\r\n";
+    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+    // Additional headers
+    $headers .= 'From: Plenumo<fysioapp@plenumo.com>' . "\r\n";
+    $headers .= 'Cc: welcome@example.com' . "\r\n";
+    $headers .= 'Bcc: welcome2@example.com' . "\r\n";
+
+    // Send email
+    if(mail($email, $subject, $htmlContent, $headers)):
+        $successMsg = 'Email has sent successfully.';
+    else:
+        $errorMsg = 'Email sending fail.';
+    endif;
 
 ?>
 
@@ -52,8 +96,9 @@
     <div class="container m-y-md">
         <div class="row">
             <div class="col-lg-8 col-offset-2">
-                <div class="wrapper">  
+                <div class="wrapper">
                     <!--main-->
+                    <?php echo "<p class='lead'>". $token. "</p>";?> 
                     <form action="save_schema.php" method="post">
                         <?php if (!empty($oefening1)): ?>
                         <div class="col-sm-3">                        
@@ -107,9 +152,7 @@
                                 </div>                            
                             </div><!--/col-->
                         <?php endif; ?>
-
-						<input type="submit" value="submit" />
-                        </form> 
+                        </form>                       
 
                     </div><!--/main row-->
                 </div><!--/main-->					

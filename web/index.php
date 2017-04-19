@@ -21,7 +21,7 @@
 					 <div>
 						<a href="php/get_schema.php">Test info</a>
 					</div>
-					<form action="php/save_schema.php" method="post">
+					<!--<form id="setSchema" action="php/save_schema.php" method="post">-->
 						<!--<label class="checkbox-inline"><input type="checkbox" name="oefening1" value="lagerugklacht" />Oefening lage rugklacht</label>-->
 						<!--<label class="checkbox-inline"><input type="checkbox" name="oefening2" value="nekklacht"  />Oefening nek klacht</label>-->
 						<!--<label class="checkbox-inline"><input type="checkbox" name="oefening3" value="schouderklacht"  />Oefening schouder klacht</label>-->
@@ -32,7 +32,7 @@
 								<div class="col-lg-8 col-offset-2">
 									<div class="wrapper">  
 										<!--main-->
-											<form action="save_schema.php" method="post">
+											<form id="setSchema" action="php/save_schema.php" method="post">
 												<div class="col-sm-3">                        
 													<div class="panel panel-default">
 														<div class="panel-thumbnail">
@@ -130,6 +130,11 @@
 						<div class="form-group">
 							<label for="bday">Geboortejaar:</label>
 							<input type="date" class="form-control" id="bday" name="bday" placeholder="yyyy">
+						</div>
+
+						<div class="form-group">
+							<label for="bday">e-mail:</label>
+							<input type="email" name="email" class="form-control" placeholder="example@hotmail.com">
 						</div>
 
 						<button type="button" class="generateToken" class="btn btn-default">generateToken</button>
