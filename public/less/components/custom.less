@@ -53,10 +53,19 @@ label {
 		transform-origin: 50% 50%;
 	}
 }
+&:not(:checked){
+	&+label {
+		&:before {
+			content: "\2713";
+			background-color: lightgrey;
+			transform: scale(1);
+		}
+	}
+}
 &:checked {
 	&+label {
 		&:before {
-			content: "✓";
+			content: "\2713";
 			background-color: @background_color_2;
 			transform: scale(1);
 		}

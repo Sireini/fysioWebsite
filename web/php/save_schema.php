@@ -2,11 +2,20 @@
     include("connect.php");
 
     // Get values from form
-    $name = trim(implode(', ',$_POST['name']));
-    $oefening1 = $_POST['oefening1'];    
+    $voornaam = $_POST['voornaam'];
+    $achternaam = $_POST['achternaam'];
+    list($title1,$src1) = explode(',', $_POST['oefening1']);
+    $oefening1 = $_POST['oefening1'];
+    
+    list($title2,$src2) = explode(',', $_POST['oefening2']);
     $oefening2 = $_POST['oefening2'];    
+    
+    list($title3,$src3) = explode(',', $_POST['oefening3']);
     $oefening3 = $_POST['oefening3'];    
+    
+    list($title4,$src4) = explode(',', $_POST['oefening4']);
     $oefening4 = $_POST['oefening4'];
+
     $rep1 = $_POST['herhaling1'];
     $rep2 = $_POST['herhaling2'];
     $rep3 = $_POST['herhaling3'];
@@ -17,10 +26,13 @@
     $set4 = $_POST['set4'];
     $token = $_POST['token'];
     $email = $_POST['email'];
+    $maingoal = $_POST['maingoal'];
+    $subgoal = $_POST['subgoal'];    
+    $subgoal2 = $_POST['subgoal2'];
 
     // Insert data into mysql
     // if(!empty($reps) && !empty($sets)){
-        $sql= "INSERT INTO Oefeningen(Naam, Token, Oefening1, Set1, Herhaling1, Oefening2, Set2, Herhaling2, Oefening3, Set3, Herhaling3, Oefening4, Set4, Herhaling4) VALUES ('$name','$token', '$oefening1', '$set1', '$rep1', '$oefening2', '$set2', '$rep2', '$oefening3', '$set3', '$rep3', '$oefening4', '$set4', '$rep4')";
+        $sql= "INSERT INTO Oefeningen(Voornaam, Achternaam, Token, Oefening1, Set1, Herhaling1, Oefening2, Set2, Herhaling2, Oefening3, Set3, Herhaling3, Oefening4, Set4, Herhaling4, Maingoal, Subgoal, Subgoal2) VALUES ('$voornaam', '$achternaam','$token', '$oefening1', '$set1', '$rep1', '$oefening2', '$set2', '$rep2', '$oefening3', '$set3', '$rep3', '$oefening4', '$set4', '$rep4', '$maingoal', '$subgoal', '$subgoal2')";
         $result = mysqli_query($conn, $sql);
 
         // if successfully insert data into database, displays message "Successful". 
@@ -34,7 +46,7 @@
     // }     
 
   
-    $subject = "Login code fysio applicatie";
+    $subject = "Login code PhysiGO!";
 
     $htmlContent = '
         <html>
@@ -43,13 +55,13 @@
         </head>
         <body>
             <table align="center" cellspacing="0" style="border: width: 600px; height: 300px;">
-                <h4>Beste'. $name . '</h4>
+                <h4>Beste '. $voornaam . '&nbsp;' . $achternaam . ',</h4>
                 <tr>
                     <td align="center" bgcolor="#70bbd9" style="padding: 40px 0 30px 0;">
-                        <img src="http://nl.tinypic.com/r/pu39i/9" alt="Creating Email Magic" width="300" height="230" style="display: block;" />
+                        <img src="http://sylvanreinieren.com/fysioWebapp/img/phone-perspective.png" alt="Creating Email Magic" width="300" height="230" style="display: block;" />
                     </td>
                 </tr>                
-                <tr></tr>
+                <tr style="height: 20px; width: 600px"></tr>
                 <tr>
                     <th>Inlog code: '. $token . '</th>
                 </tr>
@@ -65,7 +77,7 @@
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
     // Additional headers
-    $headers .= 'From: Plenumo<fysioapp@plenumo.com>' . "\r\n";
+    $headers .= 'From: PhysiGo<physigo@physigo.com>' . "\r\n";
     $headers .= 'Cc: welcome@example.com' . "\r\n";
     $headers .= 'Bcc: welcome2@example.com' . "\r\n";
 
@@ -98,23 +110,15 @@
             <div class="col-lg-8 col-offset-2">
                 <div class="wrapper">
                     <!--main-->
-                    <?php echo "<p class='lead'>". $token. "</p>";?> 
+                    <?php echo "<p class='lead'>Token: ". $token. "</p>";?> 
                     <form action="save_schema.php" method="post">
+                    <h4>Gekozen oefeningen:</h4>
                         <?php if (!empty($oefening1)): ?>
                         <div class="col-sm-3">                        
                                 <div class="panel panel-default">
-                                    <div class="panel-thumbnail"><img src="../img/<?=$oefening1 ?>.jpg" alt="test" class="img-responsive"/></div>
+                                    <div class="panel-thumbnail"><img src="../img/<?=$src1 ?>.jpeg" alt="test" class="img-responsive"/></div>
                                     <div class="panel-body">
-                                        <?php echo "<p class='lead'>". $oefening1 . "</p>";?>
-
-                                        <div class="form-group form-group-sm">
-                                            <label for="reps1" class="shortdescription">Herhalingen oefening 1:</label>
-                                            <input type="number" name="herhaling1" id="reps1" class="form-control">
-                                        </div>
-                                        <div class="form-group form-group-sm">
-                                            <label for="set1" class="shortdescription">Sets oefening 1:</label>
-                                            <input type="number" name="set1" id="set1" class="form-control">
-                                        </div>
+                                        <?php echo "<p class='lead'>". $title1 . "</p>";?>
                                     </div>
                                 </div>                            
                             </div><!--/col-->
@@ -123,9 +127,9 @@
                         <?php if (!empty($oefening2)): ?>
                         <div class="col-sm-3">                        
                                 <div class="panel panel-default">
-                                    <div class="panel-thumbnail"><img src="../img/<?=$oefening2 ?>.jpg" alt="test" class="img-responsive"/></div>
+                                    <div class="panel-thumbnail"><img src="../img/<?=$src2 ?>.jpeg" alt="test" class="img-responsive"/></div>
                                     <div class="panel-body">
-                                        <?php echo "<p class='lead'>".$oefening2. "</p>";?>
+                                        <?php echo "<p class='lead'>".$title2. "</p>";?>
                                     </div>
                                 </div>                            
                             </div><!--/col-->
@@ -134,9 +138,9 @@
                         <?php if (!empty($oefening3)): ?>
                         <div class="col-sm-3">                        
                                 <div class="panel panel-default">
-                                    <div class="panel-thumbnail"><img src="../img/<?=$oefening3 ?>.jpg" alt="test" class="img-responsive"/></div>
+                                    <div class="panel-thumbnail"><img src="../img/<?=$src3 ?>.jpeg" alt="test" class="img-responsive"/></div>
                                     <div class="panel-body">
-                                        <?php echo "<p class='lead'>". $oefening3. "</p>";?>
+                                        <?php echo "<p class='lead'>". $title3. "</p>";?>
                                     </div>
                                 </div>                            
                             </div><!--/col-->
@@ -145,9 +149,9 @@
                         <?php if (!empty($oefening4)): ?>
                         <div class="col-sm-3">                        
                                 <div class="panel panel-default">
-                                    <div class="panel-thumbnail"><img src="../img/<?=$oefening4 ?>.jpg" alt="test" class="img-responsive"/></div>
+                                    <div class="panel-thumbnail"><img src="../img/<?=$src4 ?>.jpeg" alt="test" class="img-responsive"/></div>
                                     <div class="panel-body">
-                                        <?php echo "<p class='lead'>". $oefening4. "</p>";?>                     
+                                        <?php echo "<p class='lead'>". $title4. "</p>";?>                     
                                     </div>
                                 </div>                            
                             </div><!--/col-->
